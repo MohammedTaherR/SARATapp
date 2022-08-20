@@ -80,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
                                             } catch (IOException e) {
                                                 e.printStackTrace();
                                             }
+
                                             DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference("area");
                                             databaseReference.addValueEventListener(new ValueEventListener() {
                                                 @Override
@@ -87,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
                                                     for (DataSnapshot snapshot :Datasnapshot.getChildren()) {
                                                       //  Toast.makeText(MainActivity.this, ""+snapshot.getKey(), Toast.LENGTH_SHORT).show();
                                                         if(addresses.get(0).getSubLocality().equals(snapshot.getKey())){
-
+                                                            Toast.makeText(MainActivity.this, "Message sent to "+snapshot.child("phone").getValue().toString(), Toast.LENGTH_SHORT).show();
                                                            String PhoneNO = snapshot.child("phone").getValue().toString();
                                                             String msgs = "Latitude: " + addresses.get(0).getLatitude() + "\n"+"Longitude: " + addresses.get(0).getLongitude()+"\n"+"Location: "+addresses.get(0).getSubLocality()+"\n"+"Address:"+addresses.get(0).getAddressLine(0);
                                                             try {
