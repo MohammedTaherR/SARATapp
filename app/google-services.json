@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "364380516600",
+    "project_id": "sarat-app-4f8d1",
+    "storage_bucket": "sarat-app-4f8d1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:364380516600:android:a484ea92869d9e76c80b0d",
+        "android_client_info": {
+          "package_name": "com.example.saratapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "364380516600-gt6lpt7ou89jb6tfl15mlljn8lsq83io.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGxDLiVNgBOwBV--bDec48sIGLkjY94N4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "364380516600-gt6lpt7ou89jb6tfl15mlljn8lsq83io.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
