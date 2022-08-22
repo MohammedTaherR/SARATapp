@@ -7,11 +7,11 @@
         <deviceKey>
           <Key>
             <type value="VIRTUAL_DEVICE_PATH" />
-            <value value="C:\Users\Mohammed Taher\.android\avd\Flutter_Device.avd" />
+            <value value="C:\Users\Mohammed Taher\.android\avd\Realme_X2_pro_API_29.avd" />
           </Key>
         </deviceKey>
       </Target>
     </targetSelectedWithDropDown>
-    <timeTargetWasSelectedWithDropDown value="2022-08-20T11:36:49.368962100Z" />
+    <timeTargetWasSelectedWithDropDown value="2022-08-20T16:06:37.307619400Z" />
   </component>
 </project>

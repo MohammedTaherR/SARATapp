@@ -81,19 +81,22 @@ public class MainActivity extends AppCompatActivity {
                                                 e.printStackTrace();
                                             }
 
+
+
                                             DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference("area");
                                             databaseReference.addValueEventListener(new ValueEventListener() {
                                                 @Override
                                                 public void onDataChange(@NonNull DataSnapshot Datasnapshot) {
                                                     for (DataSnapshot snapshot :Datasnapshot.getChildren()) {
-                                                      //  Toast.makeText(MainActivity.this, ""+snapshot.getKey(), Toast.LENGTH_SHORT).show();
+
                                                         if(addresses.get(0).getSubLocality().equals(snapshot.getKey())){
-                                                            Toast.makeText(MainActivity.this, "Message sent to "+snapshot.child("phone").getValue().toString(), Toast.LENGTH_SHORT).show();
                                                            String PhoneNO = snapshot.child("phone").getValue().toString();
-                                                            String msgs = "Latitude: " + addresses.get(0).getLatitude() + "\n"+"Longitude: " + addresses.get(0).getLongitude()+"\n"+"Location: "+addresses.get(0).getSubLocality()+"\n"+"Address:"+addresses.get(0).getAddressLine(0);
+                                                       String msgs = "Latitude: " + addresses.get(0).getLatitude() + "\n"+"Longitude: " + addresses.get(0).getLongitude()+"\n"+"Location: "+addresses.get(0).getSubLocality()+"\n"+"Address:"+addresses.get(0).getAddressLine(0);
                                                             try {
                                                                 SmsManager smsManager = SmsManager.getDefault();
-                                                                smsManager.sendTextMessage(PhoneNO, null, msgs, null, null);
+                                                             //   Toast.makeText(MainActivity.this, ""+snapshot.child("phone").getValue().toString(), Toast.LENGTH_SHORT).show();
+                                                             //   Toast.makeText(MainActivity.this, "hi", Toast.LENGTH_SHORT).show();
+                                                              smsManager.sendTextMessage(PhoneNO,null,"Latitude: " + addresses.get(0).getLatitude() + "\n"+"Longitude: " + addresses.get(0).getLongitude()+"\n"+"Location: "+addresses.get(0).getSubLocality() ,null,null);
                                                                 Toast.makeText(MainActivity.this, "Emergency Message is sent", Toast.LENGTH_SHORT).show();
                                                             } catch (Exception e) {
                                                                 e.printStackTrace();
@@ -111,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
                                   }
                                 });
                             }else{
-                                Toast.makeText(MainActivity.this, "Here is the error", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(MainActivity.this, "Enable Location", Toast.LENGTH_SHORT).show();
                             }
                         } else {
 
